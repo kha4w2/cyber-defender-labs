@@ -5,8 +5,11 @@
 **📝 Scenario:** Analyze network traffic using **Wireshark** to investigate a web server compromise, detect malicious web shell deployment, track reverse shell communication, and examine data exfiltration attempts.  
 
 **🗂️ Category:** Network Forensics  
+
 **🎯 Tactics:** Initial Access, Execution, Persistence, Command and Control, Exfiltration  
+
 **🛠️ Tools:** Wireshark  
+
 **⚡ Difficulty:** Easy | ⏱ ~30 mins
 
 ---
@@ -16,14 +19,18 @@
 ---
 
 ## 🔹 **QUES.1 – Identify Attack Origin**
+
 ### 🔹 **Step 1 – Reviewing IPv4 Conversations 📡**
+
 *Loaded the PCAP file and inspected the **IPv4 Conversations** to identify the most active source IP involved in the traffic.*
  
 <img width="1917" height="896" alt="s 1 2" src="https://github.com/user-attachments/assets/38d4bf20-68b0-4a19-bda8-929bed0b51b0" />
 
 
 ### 🔎 Step 2 – IP Geolocation Lookup 🌍
+
 **Summary:** Used an external IP lookup service to identify the geographical origin of the attacker’s IP **117.11.88.124**, confirming it traces back to **Tianjin, China**.
+
 <img width="1141" height="802" alt="Screenshot 2025-11-28 155705" src="https://github.com/user-attachments/assets/875a6827-f51a-40ab-a217-ab436ad90c00" />
 <img width="1102" height="342" alt="Screenshot 2025-11-28 153347" src="https://github.com/user-attachments/assets/486e9da2-f3d6-4e59-988a-0998b15d563e" />
 
@@ -35,7 +42,9 @@
 
 I inspected **TCP Stream 0** to view the attacker’s initial HTTP request.  
 By analyzing the GET request headers, I extracted the complete **User-Agent** string used during the intrusion attempt.
+
 <img width="1910" height="912" alt="2" src="https://github.com/user-attachments/assets/979e5ab0-4ec1-4ade-ba5b-2b7e6a779bd7" />
+
 <img width="1916" height="921" alt="image" src="https://github.com/user-attachments/assets/b5480338-df36-4b9f-9290-1dce3cef226e" />
 
 <img width="1122" height="267" alt="Screenshot 2025-11-28 153402" src="https://github.com/user-attachments/assets/67745b5d-f5bb-41f7-ad6f-e878e44371ca" />
@@ -56,9 +65,11 @@ the uploaded web shell name hidden inside the request payload. ⚠️📡
 <img width="1918" height="697" alt="Screenshot 2025-11-28 151304" src="https://github.com/user-attachments/assets/5231e62d-1a9f-47d1-a61c-4b2b89c291b9" />
 
 <img width="1918" height="916" alt="Screenshot 2025-11-28 151328" src="https://github.com/user-attachments/assets/69e45695-73e5-4024-9e2c-f65c768be20b" />
+
 <img width="1918" height="922" alt="Screenshot 2025-11-28 151353" src="https://github.com/user-attachments/assets/5c303d6b-d3ac-4f71-9a9c-c283e7ef2ba3" />
 
 <img width="1918" height="866" alt="Screenshot 2025-11-28 151449" src="https://github.com/user-attachments/assets/0f5120b9-fe2f-4637-b5ba-5c22dc3fdcb8" />
+
 <img width="1172" height="249" alt="Screenshot 2025-11-28 153434" src="https://github.com/user-attachments/assets/60571a46-903e-4e09-91d9-db720258f375" />
 
 
@@ -74,6 +85,7 @@ that uploads were handled through **/reviews/upload.php**, which stores files in
 **Answer:** `/reviews/uploads/` ✔️
 
 <img width="1918" height="903" alt="Screenshot 2025-11-28 152322" src="https://github.com/user-attachments/assets/1b66bfff-08e1-47a0-af58-0eef87a16243" />
+
 <img width="1135" height="261" alt="Screenshot 2025-11-28 153502" src="https://github.com/user-attachments/assets/6e9b3af3-a0b8-46ab-86a3-5e978e3b8a32" />
 
 ---
@@ -86,10 +98,10 @@ revealed the **nc (netcat)** connection, clearly showing the outbound port **808
 attacker used to establish their remote access. 🚨📡
 
 **Answer:** `8080` ✔️
+
 <img width="1918" height="903" alt="Screenshot 2025-11-28 152322" src="https://github.com/user-attachments/assets/7f13126d-d4e5-415f-98d3-8c930f9c3505" />
 
 <img width="1130" height="258" alt="Screenshot 2025-11-28 153522" src="https://github.com/user-attachments/assets/991bebb9-069e-4f8b-98dc-9226ab03f1dc" />
-
 
 ---
 
