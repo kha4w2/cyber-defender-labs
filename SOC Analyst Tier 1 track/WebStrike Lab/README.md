@@ -1,5 +1,5 @@
 # 🛡️ Cyber Defender – SOC Analyst Tier 1  
-## 📘 Lab Title: *Enter Lab Name Here*
+## 📘 Lab Title: *WebStrike Lab*
 
 ---
 
