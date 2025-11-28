@@ -16,10 +16,11 @@
 ---
 
 ## 🔹 **QUES.1 – Identify Attack Origin**
-### **Step 1:** Initial Traffic Inspection  
-*Opened `WebStrike.pcap` in Wireshark and reviewed top source IPs to identify suspicious traffic.*  
-**Screenshot:**  
-![Q1-Step1](q1-step1.png)
+### 🔹 **Step 1 – Reviewing IPv4 Conversations 📡**
+*Loaded the PCAP file and inspected the **IPv4 Conversations** to identify the most active source IP involved in the traffic.*
+ 
+<img width="1917" height="896" alt="s 1 2" src="https://github.com/user-attachments/assets/38d4bf20-68b0-4a19-bda8-929bed0b51b0" />
+
 
 ### **Step 2:** Geolocation Lookup  
 *Queried the main suspicious IP using external geolocation to determine the originating city.*  
