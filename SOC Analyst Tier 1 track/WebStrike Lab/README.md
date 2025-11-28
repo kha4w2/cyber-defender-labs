@@ -66,6 +66,6 @@
 | Q5 – Target Port | 8080 |
 | Q6 – Exfiltrated File | passwd |
 
----
+<img width="1918" height="931" alt="Screenshot 2025-11-28 153328" src="https://github.com/user-attachments/assets/76a1cf58-379e-4806-b61d-f4c3004370d1" />
 
-## 📂 Folder Structure
+---
