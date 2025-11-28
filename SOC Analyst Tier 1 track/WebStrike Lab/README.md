@@ -1,11 +1,13 @@
 # 🛡️ WebStrike Lab – SOC Analyst Tier 1
 
 ## 📌 Lab Overview
-**Scenario:** Analyze network traffic using Wireshark to investigate a web server compromise, identify web shell deployment, reverse shell communication, and data exfiltration.  
-**Category:** Network Forensics  
-**Tactics:** Initial Access, Execution, Persistence, Command and Control, Exfiltration  
-**Tools:** Wireshark  
-**Difficulty:** Easy | ~30 mins  
+
+**📝 Scenario:** Analyze network traffic using **Wireshark** to investigate a web server compromise, detect malicious web shell deployment, track reverse shell communication, and examine data exfiltration attempts.  
+
+**🗂️ Category:** Network Forensics  
+**🎯 Tactics:** Initial Access, Execution, Persistence, Command and Control, Exfiltration  
+**🛠️ Tools:** Wireshark  
+**⚡ Difficulty:** Easy | ⏱ ~30 mins
 
 ---
 
