@@ -18,7 +18,7 @@
 
 ---
 
-## 🔹 **QUES.1 – Identify Attack Origin**
+## 🔹 **Q1 – Identify Attack Origin**
 
 ### 🔹 **Step 1 – Reviewing IPv4 Conversations 📡**
 
