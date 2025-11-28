@@ -29,7 +29,7 @@
 
 ### 🔎 Step 2 – IP Geolocation Lookup 🌍
 
-**Used an external IP lookup service to identify the geographical origin of the attacker’s IP **117.11.88.124**, confirming it traces back to **Tianjin, China**.
+*Used an external IP lookup service to identify the geographical origin of the attacker’s IP **117.11.88.124**, confirming it traces back to **Tianjin, China**.
 
 <img width="1141" height="802" alt="Screenshot 2025-11-28 155705" src="https://github.com/user-attachments/assets/875a6827-f51a-40ab-a217-ab436ad90c00" />
 <img width="1102" height="342" alt="Screenshot 2025-11-28 153347" src="https://github.com/user-attachments/assets/486e9da2-f3d6-4e59-988a-0998b15d563e" />
