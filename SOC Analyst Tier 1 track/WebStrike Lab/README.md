@@ -1,4 +1,4 @@
-# 🛡️ WebStrike Lab – SOC Analyst Tier 1
+<img width="1916" height="921" alt="2 1" src="https://github.com/user-attachments/assets/ab04a0a9-f520-472c-bd48-bf9776587064" /># 🛡️ WebStrike Lab – SOC Analyst Tier 1
 
 ## 📌 Lab Overview
 
@@ -22,23 +22,25 @@
 <img width="1917" height="896" alt="s 1 2" src="https://github.com/user-attachments/assets/38d4bf20-68b0-4a19-bda8-929bed0b51b0" />
 
 
-### **Step 2:** Geolocation Lookup  
-*Queried the main suspicious IP using external geolocation to determine the originating city.*  
-**Screenshot:**  
-![Q1-Step2](q1-step2.png)
+### 🔎 Step 2 – IP Geolocation Lookup 🌍
+**Summary:** Used an external IP lookup service to identify the geographical origin of the attacker’s IP **117.11.88.124**, confirming it traces back to **Tianjin, China**.
+<img width="1141" height="802" alt="Screenshot 2025-11-28 155705" src="https://github.com/user-attachments/assets/875a6827-f51a-40ab-a217-ab436ad90c00" />
+<img width="1102" height="342" alt="Screenshot 2025-11-28 153347" src="https://github.com/user-attachments/assets/486e9da2-f3d6-4e59-988a-0998b15d563e" />
+
+
 
 ---
 
-## 🔹 **QUES.2 – Extract Attacker User-Agent**
-### **Step 1:** Filter HTTP GET Requests  
-*Applied `http.request.method == "GET"` to isolate attacker’s browsing activity.*  
-**Screenshot:**  
-![Q2-Step1](q2-step1.png)
+## Q2 – Identifying the Attacker’s User-Agent 🕵️‍♂️
 
-### **Step 2:** User-Agent Identification  
-*Checked packet details to extract the full User-Agent string.*  
-**Screenshot:**  
-![Q2-Step2](q2-step2.png)
+I inspected **TCP Stream 0** to view the attacker’s initial HTTP request.  
+By analyzing the GET request headers, I extracted the complete **User-Agent** string used during the intrusion attempt.
+<img width="1910" height="912" alt="2" src="https://github.com/user-attachments/assets/979e5ab0-4ec1-4ade-ba5b-2b7e6a779bd7" />
+<img width="1916" height="921" alt="image" src="https://github.com/user-attachments/assets/b5480338-df36-4b9f-9290-1dce3cef226e" />
+
+<img width="1122" height="267" alt="Screenshot 2025-11-28 153402" src="https://github.com/user-attachments/assets/67745b5d-f5bb-41f7-ad6f-e878e44371ca" />
+
+
 
 ---
 
