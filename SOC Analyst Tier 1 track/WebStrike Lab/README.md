@@ -1,4 +1,4 @@
-<img width="1916" height="921" alt="2 1" src="https://github.com/user-attachments/assets/ab04a0a9-f520-472c-bd48-bf9776587064" /># 🛡️ WebStrike Lab – SOC Analyst Tier 1
+# 🛡️ WebStrike Lab – SOC Analyst Tier 1
 
 ## 📌 Lab Overview
 
@@ -44,55 +44,63 @@ By analyzing the GET request headers, I extracted the complete **User-Agent** st
 
 ---
 
-## 🔹 **QUES.3 – Identify Uploaded Web Shell**
-### **Step 1:** Filter HTTP POST Uploads  
-*Focused on POST requests from attacker’s IP to locate malicious file uploads.*  
-**Screenshot:**  
-![Q3-Step1](q3-step1.png)
+## Q3 – Identifying the Malicious Web Shell 🐚💥🔎
 
-### **Step 2:** Web Shell Detection  
-*Confirmed the uploaded malicious file name (`image.jpg.php`).*  
-**Screenshot:**  
-![Q3-Step2](q3-step2.png)
+To confirm whether the vulnerability was exploited, I applied the filter  
+`ip.addr == 117.11.88.124 && http` to isolate all attacker-originating HTTP traffic.  
+By inspecting the malicious POST request toward **/reviews/upload.php** and following  
+the full HTTP stream, the server replied with **"File uploaded successfully"**, exposing  
+the uploaded web shell name hidden inside the request payload. ⚠️📡
 
----
+**Answer:** `image.jpg.php` 🧨
+<img width="1918" height="697" alt="Screenshot 2025-11-28 151304" src="https://github.com/user-attachments/assets/5231e62d-1a9f-47d1-a61c-4b2b89c291b9" />
 
-## 🔹 **QUES.4 – Determine Upload Directory**
-### **Step 1:** Follow Web Shell Execution Path  
-*Tracked the web shell request to uncover its directory location.*  
-**Screenshot:**  
-![Q4-Step1](q4-step1.png)
+<img width="1918" height="916" alt="Screenshot 2025-11-28 151328" src="https://github.com/user-attachments/assets/69e45695-73e5-4024-9e2c-f65c768be20b" />
+<img width="1918" height="922" alt="Screenshot 2025-11-28 151353" src="https://github.com/user-attachments/assets/5c303d6b-d3ac-4f71-9a9c-c283e7ef2ba3" />
 
-### **Step 2:** Directory Confirmation  
-*Identified the upload folder used by the server: `/reviews/uploads/`.*  
-**Screenshot:**  
-![Q4-Step2](q4-step2.png)
+<img width="1918" height="866" alt="Screenshot 2025-11-28 151449" src="https://github.com/user-attachments/assets/0f5120b9-fe2f-4637-b5ba-5c22dc3fdcb8" />
+<img width="1172" height="249" alt="Screenshot 2025-11-28 153434" src="https://github.com/user-attachments/assets/60571a46-903e-4e09-91d9-db720258f375" />
+
 
 ---
 
-## 🔹 **QUES.5 – Outbound Communication Port**
-### **Step 1:** Inspect Malicious POST Content  
-*Checked the uploaded script content to view reverse shell configuration.*  
-**Screenshot:**  
-![Q5-Step1](q5-step1.png)
+## Q4 – Identifying the File Upload Directory 📁🚨🕵️‍♂️
 
-### **Step 2:** Port Identification  
-*Found attacker’s listening port used for outbound connection (`8080`).*  
-**Screenshot:**  
-![Q5-Step2](q5-step2.png)
+To locate where the attacker’s uploaded script was stored, I followed the POST request  
+containing the malicious file *image.jpg.php*. Inspecting the HTTP request path revealed  
+that uploads were handled through **/reviews/upload.php**, which stores files inside the  
+**/reviews/uploads/** directory. 📂🔥
+
+**Answer:** `/reviews/uploads/` ✔️
+
+<img width="1918" height="903" alt="Screenshot 2025-11-28 152322" src="https://github.com/user-attachments/assets/1b66bfff-08e1-47a0-af58-0eef87a16243" />
+<img width="1135" height="261" alt="Screenshot 2025-11-28 153502" src="https://github.com/user-attachments/assets/6e9b3af3-a0b8-46ab-86a3-5e978e3b8a32" />
 
 ---
 
-## 🔹 **QUES.6 – Detect Exfiltrated File**
-### **Step 1:** Follow POST Traffic to Attacker  
-*Filtered outbound POST requests targeting attacker’s server.*  
-**Screenshot:**  
-![Q6-Step1](q6-step1.png)
+## Q5 – Identifying the Malicious Web Shell Port 🔍💻🔥
 
-### **Step 2:** File Exfiltration Analysis  
-*Confirmed the target file intended for exfiltration (`passwd`).*  
-**Screenshot:**  
-![Q6-Step2](q6-step2.png)
+To determine which port the attacker’s web shell used, I inspected the POST request that  
+contained the uploaded malicious file. Inside the PHP payload, the reverse shell command  
+revealed the **nc (netcat)** connection, clearly showing the outbound port **8080**, which the  
+attacker used to establish their remote access. 🚨📡
+
+**Answer:** `8080` ✔️
+<img width="1918" height="903" alt="Screenshot 2025-11-28 152322" src="https://github.com/user-attachments/assets/7f13126d-d4e5-415f-98d3-8c930f9c3505" />
+
+<img width="1130" height="258" alt="Screenshot 2025-11-28 153522" src="https://github.com/user-attachments/assets/991bebb9-069e-4f8b-98dc-9226ab03f1dc" />
+
+
+---
+
+## Q6 – 💾 Investigating Data Breach: Pinpointing Targeted Files 🔍💻🔥
+
+To see this response, find the packet that has the source IP 24.49.63.79 and destination IP 117.11.88.124 using the POST method. 🚨📡 
+
+**Answer:** ` passwd` ✔️
+<img width="1918" height="863" alt="Screenshot 2025-11-28 152923" src="https://github.com/user-attachments/assets/2ba54dd8-4b25-466b-95f0-b8601ccd6752" />
+
+<img width="1107" height="323" alt="Screenshot 2025-11-28 153540" src="https://github.com/user-attachments/assets/d49dbf82-9396-4dea-a43b-1b02b7b45bd3" />
 
 ---
 
@@ -108,7 +116,7 @@ By analyzing the GET request headers, I extracted the complete **User-Agent** st
 
 ---
 
-## 📸 Screenshot Example  
+## 📸 Completing This Lab 
 
 
 <img width="1918" height="931" alt="Screenshot 2025-11-28 153328" src="https://github.com/user-attachments/assets/76a1cf58-379e-4806-b61d-f4c3004370d1" />
