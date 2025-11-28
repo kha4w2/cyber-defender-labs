@@ -5,8 +5,7 @@
 **Category:** Network Forensics  
 **Tactics:** Initial Access, Execution, Persistence, Command and Control, Exfiltration  
 **Tools:** Wireshark  
-**Difficulty:** Easy | Retired | ~30 mins  
-**Region:** Frankfurt  
+**Difficulty:** Easy | ~30 mins  
 
 ---
 
