@@ -13,14 +13,30 @@
 ## 🧩 Analysis & Findings
 
 ### 🔹 Q1 – Identify Mistyped Query
+
+<img width="975" height="469" alt="image" src="https://github.com/user-attachments/assets/491d4122-6b88-4254-a65d-469162110320" />
+
+<img width="975" height="438" alt="image" src="https://github.com/user-attachments/assets/30552c2e-9013-4383-8722-730403f412b1" />
+
+
 **Objective:** Find the mistyped share name queried by `192.168.232.162`.  
 **🔍 Analysis:** Applied Wireshark filter `llmnr and ip.src==192.168.232.162` to isolate the misspelled LLMNR query.  
+
 **✅ Answer:** `fileshaare`
 
+<img width="975" height="438" alt="image" src="https://github.com/user-attachments/assets/b904ee25-55de-42da-826c-21c42ac62dbe" />
+
+
 ### 🔹 Q2 – Rogue Machine IP
+
+<img width="975" height="468" alt="image" src="https://github.com/user-attachments/assets/0477e840-5a0e-45b0-b527-311fba3ebf19" />
+
 **Objective:** Determine the IP address of the attacker's machine.  
 **🔍 Analysis:** Located the LLMNR response packet sent immediately after the mistyped query, identifying the spoofing source.  
 **✅ Answer:** `192.168.232.215`
+
+<img width="975" height="468" alt="image" src="https://github.com/user-attachments/assets/12335c3d-3c61-4d10-a5d6-615844b5e3c9" />
+
 
 ### 🔹 Q3 – Second Affected Machine
 **Objective:** Identify the second victim that received poisoned responses.  
