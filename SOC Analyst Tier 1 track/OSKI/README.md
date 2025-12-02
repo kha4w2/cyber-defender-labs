@@ -54,7 +54,7 @@ Reviewed network activity in the sandbox report, specifically HTTP POST requests
 
 **🔍 Analysis:**  
 
-<img width="975" height="227" alt="image" src="https://github.com/user-attachments/assets/badbc7ae-b2cd-4367-9e9f-0a4eb5cdee8d" />
+<img width="975" height="448" alt="image" src="https://github.com/user-attachments/assets/97ece144-5001-437d-821e-69a20dd87a77" />
 
 Examined HTTP GET requests in the "Network Communication" section of the activity summary.
 
