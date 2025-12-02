@@ -77,7 +77,7 @@ Located the malware configuration section in the ANY.RUN report, revealing embed
 
 **✅ Answer:**  
 
-<img width="975" height="469" alt="image" src="https://github.com/user-attachments/assets/672e0f53-893a-45bf-9b77-26ede1b4b058" />
+<img width="975" height="232" alt="image" src="https://github.com/user-attachments/assets/4a012ff3-b191-4fd1-b5ad-53d26fbe54a9" />
 
 `5329514621441247975720749009`
 
