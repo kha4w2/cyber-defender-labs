@@ -111,87 +111,68 @@ Extracted the C2 endpoint from Red Canary’s threat intelligence documentation 
 * CyberDefenders Lab: **Yellow RAT**
 
 ---
+## 🛡️ Recommended Actions
 
+### **Immediate Containment**
+1. Quarantine affected systems
+2. Block C2 domain (`gogohid.com`) at network perimeter
+3. Search for `solarmarker.dat` across endpoints
+4. Check registry for suspicious autostart entries
+
+### **Detection Rules**
+```yaml
+# YARA Rule (conceptual)
+rule Yellow_Cockatoo_RAT {
+    strings:
+        $uuid_name = /[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}\.dll/
+        $appdata_file = "solarmarker.dat"
+    condition:
+        any of them
+}
+```
+
+### **Prevention Measures**
+- Implement application whitelisting
+- Monitor for suspicious .dll files with UUID names
+- Enable HTTPS inspection for C2 detection
+- Regular user awareness training on SEO poisoning tactics
+
+---
+
+## 📈 Threat Intelligence Context
+
+### **Campaign Associations**
+- Part of SolarMarker/Jupyter malware campaigns
+- Active since at least 2020
+- Targets various industries for credential theft
+- Often distributed via "business document" lures
+
+### **Tactics, Techniques & Procedures (TTPs)**
+- **T1027:** Obfuscated Files or Information
+- **T1059:** Command and Scripting Interpreter
+- **T1071:** Application Layer Protocol (HTTPS)
+- **T1112:** Modify Registry
+- **T1547:** Boot or Logon Autostart Execution
+
+---
+
+## 🔗 References
+1. VirusTotal Analysis: [Sample Link]
+2. Red Canary Threat Report: SolarMarker/Yellow Cockatoo
+3. MITRE ATT&CK: Techniques T1027, T1059, T1071, T1112, T1547
+4. CyberDefenders Lab: Yellow RAT Challenge
+
+---
+
+## 📝 Analyst Notes
+- The malware uses HTTPS for C2, making network detection more challenging
+- UUID-style naming attempts to blend with legitimate system files
+- The ~3-week gap between compilation and first submission suggests targeted deployment
+- Browser redirects are a primary user-visible symptom
 ## ✅ Notes
 
 This write-up is designed to help SOC analysts and threat hunters quickly identify malware behavior, IOCs, and common artifacts associated with the **Yellow Cockatoo RAT** family.🔥 
 
-
-# 🟡 Yellow RAT – Malware Analysis & Threat Intelligence Report
-
-## 📋 Executive Summary
-During a routine security audit at **GlobalTech Industries**, anomalous network activity and browser redirects were observed across multiple endpoints. Subsequent analysis identified a **Yellow Cockatoo RAT (Remote Access Trojan)** infection, part of the SolarMarker malware family. This report documents key findings, indicators of compromise (IOCs), and relevant threat intelligence.
-
----
-
-## 🔍 Analysis Summary
-
-### **Malware Overview**
-- **Family:** Yellow Cockatoo RAT (SolarMarker/Jupyter variant)
-- **Type:** Information-stealing remote access trojan
-- **Primary Function:** Browser hijacking, credential harvesting, backdoor access
-- **Delivery Method:** Typically via malicious SEO poisoning and fake software installers
-
-### **Key Characteristics**
-- Persists via registry modifications and dropped files
-- Establishes C2 communication over HTTPS
-- Modifies browser settings for search redirection
-- Evades detection through obfuscation and legitimate-looking filenames
-
----
-
-## 📊 Technical Findings
-
-### **Q1: Malware Family Identification**
-**Finding:** `Yellow Cockatoo RAT`  
-**Source:** VirusTotal community analysis and detection labels  
-**Confidence:** High (multiple AV vendors identify as Yellow Cockatoo/Jupyter/SolarMarker)
-
-### **Q2: Common Filename**
-**Finding:** `111bc461-1ca8-43c6-97ed-911e0e69fdf8.dll`  
-**Location:** VirusTotal → Details → Names section  
-**Note:** Uses UUID-style naming to appear legitimate
-
-### **Q3: Compilation Timestamp**
-**Finding:** `2020-09-24 18:26`  
-**Source:** PE header information from VirusTotal analysis  
-**Significance:** Helps establish malware timeline and campaign analysis
-
-### **Q4: First Submission Date**
-**Finding:** `2020-10-15 02:47`  
-**Source:** VirusTotal History tab  
-**Note:** ~3 weeks between compilation and first submission suggests private deployment period
-
-### **Q5: Dropped Artifact**
-**Finding:** `solarmarker.dat`  
-**Location:** `%AppData%` directory  
-**Purpose:** Configuration file or secondary payload storage
-
-### **Q6: Command & Control Server**
-**Finding:** `https://gogohid.com`  
-**Source:** Red Canary threat intelligence reporting  
-**Protocol:** HTTPS (encrypted C2 communication)
-
----
-
-## 🎯 Indicators of Compromise (IOCs)
-
-### **File Indicators**
-- **SHA-256:** [Provided in challenge]
-- **Filename:** `111bc461-1ca8-43c6-97ed-911e0e69fdf8.dll`
-- **Dropped File:** `%AppData%\solarmarker.dat`
-
-### **Network Indicators**
-- **C2 Domain:** `gogohid.com`
-- **Protocol:** HTTPS (port 443)
-
-### **Behavioral Indicators**
-- Browser search engine modifications
-- Unusual outbound HTTPS traffic to unknown domains
-- Registry changes for persistence
-- File creation in AppData with .dat extension
-
----
 
 ## 🛡️ Recommended Actions
 
@@ -251,7 +232,4 @@ rule Yellow_Cockatoo_RAT {
 - UUID-style naming attempts to blend with legitimate system files
 - The ~3-week gap between compilation and first submission suggests targeted deployment
 - Browser redirects are a primary user-visible symptom
-
-**Report Generated:** [Date]  
-**Classification:** CONFIDENTIAL  
-**TLP:** AMBER
+---
