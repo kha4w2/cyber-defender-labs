@@ -104,10 +104,6 @@
 
 ---
 
-## 📁 Files
-- **PCAP File:** `PoisonedCredentials.pcap`
-- **Write-up Author:** [Your Name/Alias]
-- **Completion Date:** December 2025
 
 ---
 **🔍 Tags:** `#CyberDefenders` `#NetworkForensics` `#LLMNR_Poisoning` `#NBTNS` `#Wireshark` `#BlueTeam` `#DFIR`
