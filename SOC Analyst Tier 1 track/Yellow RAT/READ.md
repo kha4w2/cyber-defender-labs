@@ -1,0 +1,117 @@
+
+# 🟡 Yellow RAT – CyberDefenders Write-Up
+
+### *Threat Intelligence – Malware Investigation*
+
+---
+
+## 📌 Scenario
+
+During a routine IT security audit at **GlobalTech Industries**, analysts detected abnormal outbound traffic and browser search redirections across several workstations. Your task is to analyze the malware sample using threat intelligence platforms and identify key Indicators of Compromise (IOCs).
+
+---
+
+## 🛠️ Tools Used
+
+* **VirusTotal**
+* **Red Canary Threat Intelligence**
+
+---
+
+## ✔️ Questions & Answers
+
+---
+
+## **Q1 — Malware Family Identification**
+
+<img width="975" height="472" alt="image" src="https://github.com/user-attachments/assets/47d65a69-b5a8-4c1f-911b-3063c354b5b5" />
+
+<img width="975" height="474" alt="image" src="https://github.com/user-attachments/assets/8b9813f6-25b6-4dd9-ad70-02b64c5942ea" />
+
+<img width="975" height="220" alt="image" src="https://github.com/user-attachments/assets/46983b81-b458-46c9-a093-4f6732f96b7b" />
+
+**Answer:** `Yellow Cockatoo RAT`
+
+**Method:**
+Identified malware family by searching the provided hash on VirusTotal and confirming via Community comments.
+
+---
+
+## **Q2 — Common Malware Filename**
+
+<img width="975" height="288" alt="image" src="https://github.com/user-attachments/assets/9ccd8994-f5b8-4488-a729-244bd1ec503c" />
+
+<img width="975" height="426" alt="image" src="https://github.com/user-attachments/assets/9e7fd048-e1de-401b-ab67-9faa23003ab0" />
+
+<img width="975" height="222" alt="image" src="https://github.com/user-attachments/assets/4836761b-bb3c-4dfc-b712-ec4c2322b5a9" />
+
+**Answer:** `111bc461-1ca8-43c6-97ed-911e0e69fdf8.dll`
+
+**Method:**
+Extracted the malware's common filename from the “Details → Names” section on VirusTotal.
+
+---
+
+## **Q3 — Compilation Timestamp**
+
+<img width="975" height="389" alt="image" src="https://github.com/user-attachments/assets/3829afc8-1949-4132-b2f2-aaf51bdad64d" />
+
+<img width="975" height="218" alt="image" src="https://github.com/user-attachments/assets/f48f28d5-25ae-465b-9729-927b89e939d3" />
+
+**Answer:** `2020-09-24 18:26`
+
+**Method:**
+Retrieved the compilation timestamp from the PE header under “Portable Executable Info” on VirusTotal.
+
+---
+
+## **Q4 — First Submission to VirusTotal**
+
+<img width="975" height="210" alt="image" src="https://github.com/user-attachments/assets/3888d44c-d1f7-4226-8055-7a14da717666" />
+
+<img width="975" height="250" alt="image" src="https://github.com/user-attachments/assets/5435463b-2cc7-4c41-801e-c6bfd9e6ce3a" />
+
+**Answer:** `2020-10-15 02:47`
+
+**Method:**
+Checked the “History” tab on VirusTotal to find the first submission date of the sample.
+
+---
+
+## **Q5 — Dropped File in AppData**
+
+<img width="975" height="395" alt="image" src="https://github.com/user-attachments/assets/f7555a8c-bd5f-4bf6-9f73-60d532fa0208" />
+
+<img width="975" height="395" alt="image" src="https://github.com/user-attachments/assets/990f95d3-48b4-49f4-a6ff-41c8eedd0292" />
+
+**Answer:** `solarmarker.dat`
+
+**Method:**
+Verified dropped artifacts using Red Canary’s analysis of Yellow Cockatoo/Jupyter malware.
+
+---
+
+## **Q6 — Command & Control (C2) Server**
+
+<img width="975" height="482" alt="image" src="https://github.com/user-attachments/assets/81e945b0-c429-414e-a95d-a1cfc950aa12" />
+
+<img width="975" height="261" alt="image" src="https://github.com/user-attachments/assets/0311890f-089c-4704-a462-0f964457392b" />
+
+**Answer:** `https://gogohid.com`
+
+**Method:**
+Extracted the C2 endpoint from Red Canary’s threat intelligence documentation on SolarMarker/Yellow Cockatoo RAT.
+
+---
+
+## 📎 References
+
+* VirusTotal Sample Analysis
+* Red Canary: SolarMarker / Yellow Cockatoo Threat Report
+* CyberDefenders Lab: **Yellow RAT**
+
+---
+
+## ✅ Notes
+
+This write-up is designed to help SOC analysts and threat hunters quickly identify malware behavior, IOCs, and common artifacts associated with the **Yellow Cockatoo RAT** family.🔥
