@@ -154,7 +154,7 @@ Traced process timeline events and compared timestamps of exfiltration vs. delet
 - **Persistence:** Uses scheduled tasks or startup entries (inferred from `%APPDATA%` references).
 - **Credential Access:** Searches for password stores (browsers, system credentials) via `sqlite3.dll`.
 - **C2 Communication:** HTTP POST to controlled PHP endpoint for data exfiltration.
-- **Defense Evasion:** Deletes DLLs in `C:\ProgramData`, self-deletes after 2.5 seconds post-exfiltration.
+- **Defense Evasion:** Deletes DLLs in `C:\ProgramData`, self-deletes after 5 seconds post-exfiltration.
 - **Encryption:** Uses RC4 with hardcoded key to decrypt C2 configurations.
 
 ---
