@@ -1,4 +1,4 @@
-# 🛡️ PoisonedCredentials – LLMNR/NBT-NS Poisoning Analysis Write-up
+# 🛡️ PoisonedCredentials – LLMNR/NBT-NS Poisoning Analysis 
 
 
 <img width="975" height="473" alt="image" src="https://github.com/user-attachments/assets/39b0a321-74b9-4d42-86e0-6a0aaa65fed6" />
