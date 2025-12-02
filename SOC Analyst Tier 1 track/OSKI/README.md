@@ -171,11 +171,6 @@ Traced process timeline events and compared timestamps of exfiltration vs. delet
 
 ---
 
-## 📸 Evidence Snapshots
-*(Refer to uploaded screenshots for detailed views of network activity, process trees, and configuration extracts.)*
-
----
-
 ### ✅ Lessons Learned:
 - Malware often uses simple encryption (RC4) with static keys for string obfuscation.
 - Timestamps in PE headers can reveal initial compilation times.
