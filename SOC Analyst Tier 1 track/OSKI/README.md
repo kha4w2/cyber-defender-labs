@@ -1,4 +1,4 @@
-<img width="975" height="469" alt="image" src="https://github.com/user-attachments/assets/ad772f65-b5d2-4020-ae5e-b4b93110e060" /># 🔍 OSKI Malware Analysis – Threat Hunting Lab
+# 🔍 OSKI Malware Analysis – Threat Hunting Lab
 
 ## 📌 Lab Overview
 
