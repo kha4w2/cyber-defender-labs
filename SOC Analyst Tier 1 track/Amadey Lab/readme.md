@@ -1,13 +1,17 @@
 
 # 🟡 Amadey Malware – CyberDefenders Write-Up
-Memory Forensics – Malware Analysis
+                                                               # Memory Forensics – Malware Analysis
 
 
 <img width="975" height="473" alt="image" src="https://github.com/user-attachments/assets/0745fc81-eb98-4ded-a6cb-dbc36cfe1036" />
 
 
 ## 📌 Introduction
-In this challenge, we were provided with a memory dump from an infected machine suspected of running the Amadey malware in the CyberDefenders.org challenge. Amadey is a modular malware variant primarily used for stealing sensitive information and conducting various malicious activities, including credential theft and the distribution of additional payloads. Known for its persistence mechanisms and ability to evade detection, Amadey poses a significant threat to infected systems.
+In this challenge, we were provided with a memory dump from an infected machine suspected of running the Amadey malware in the CyberDefenders.org challenge. 
+
+**Amadey Trojan**: A Windows-based information stealer and botnet first observed in 2018. It functions as a downloader for additional malware payloads while exfiltrating credentials and sensitive data through C2 communications. Known for persistence mechanisms including scheduled tasks and registry modifications.
+
+Amadey is a modular malware variant primarily used for stealing sensitive information and conducting various malicious activities, including credential theft and the distribution of additional payloads. Known for its persistence mechanisms and ability to evade detection, Amadey poses a significant threat to infected systems.
 
 After completing the challenge, I noticed the absence of a detailed write-up for this lab. Therefore, I decided to document my analysis to help others enhance their digital forensic skills and apply professional methodologies in memory forensics.
 
