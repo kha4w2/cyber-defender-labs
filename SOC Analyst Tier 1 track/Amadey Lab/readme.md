@@ -1,7 +1,9 @@
 
 # 🟡 Amadey Malware – CyberDefenders Write-Up
 
-  *Memory Forensics – Malware Analysis*
+  ## Memory Forensics – Malware Analysis
+Link To This Lab: https://cyberdefenders.org/blueteam-ctf-challenges/amadey/
+  
 
 
 <img width="975" height="473" alt="image" src="https://github.com/user-attachments/assets/0745fc81-eb98-4ded-a6cb-dbc36cfe1036" />
