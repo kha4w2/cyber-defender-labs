@@ -1,12 +1,14 @@
 
 # 🟡 Amadey Malware – CyberDefenders Write-Up
-  Memory Forensics – Malware Analysis
+
+  *Memory Forensics – Malware Analysis*
 
 
 <img width="975" height="473" alt="image" src="https://github.com/user-attachments/assets/0745fc81-eb98-4ded-a6cb-dbc36cfe1036" />
 
 
 ## 📌 Introduction
+
 In this challenge, we were provided with a memory dump from an infected machine suspected of running the Amadey malware in the CyberDefenders.org challenge. 
 
 **Amadey Trojan**: A Windows-based information stealer and botnet first observed in 2018. It functions as a downloader for additional malware payloads while exfiltrating credentials and sensitive data through C2 communications. Known for persistence mechanisms including scheduled tasks and registry modifications.
@@ -16,10 +18,13 @@ Amadey is a modular malware variant primarily used for stealing sensitive inform
 After completing the challenge, I noticed the absence of a detailed write-up for this lab. Therefore, I decided to document my analysis to help others enhance their digital forensic skills and apply professional methodologies in memory forensics.
 
 ## 🛠️ Environment & Methodology
+
 **Environment Setup:**  
+
 The analysis was conducted in a controlled lab environment with Volatility 3 as the primary tool for memory forensics.
 
-**Methodology:**  
+**Methodology:** 
+
 Before addressing specific challenge questions, I focused on understanding the memory image through systematic information gathering using Volatility 3.
 
 ### 1. Understanding the Operating System
@@ -28,6 +33,13 @@ Determining the OS is crucial as it influences the analysis approach. Using the 
 ```bash
 python3 vol.py -f /home/ubuntu/Desktop/Start\ here/Artifacts/Windows\ 7\ x64-Snapshot4.vmem windows.info
 ```
+
+
+<img width="975" height="475" alt="image" src="https://github.com/user-attachments/assets/e02d91e5-63a4-47e3-b7e1-a419297f4259" />
+
+
+<img width="975" height="468" alt="image" src="https://github.com/user-attachments/assets/eeee4632-63dc-483b-a646-b11c9a293b68" />
+
 
 **Output:** We are working with a 64-bit Windows 7 SP1 system.
 
@@ -38,31 +50,71 @@ After OS identification, I examined running processes using `windows.pstree` to 
 python3 vol.py -f /home/ubuntu/Desktop/Start\ here/Artifacts/Windows\ 7\ x64-Snapshot4.vmem windows.pstree
 ```
 
+<img width="975" height="468" alt="image" src="https://github.com/user-attachments/assets/9ca0de98-421b-4bf2-901d-43ab239a3a1b" />
+
+
+<img width="975" height="468" alt="image" src="https://github.com/user-attachments/assets/9ef11379-c9bc-4e24-8a4b-6c449c0c7675" />
+
+
 **Finding:** A suspicious process named **"lssass.exe"** (masquerading as legitimate lsass.exe) appeared without proper parent linkage and spawned **rundll32.exe** as a child process—a known Amadey behavior pattern.
 
 ### 3. Analyzing Processes
+
 I used multiple Volatility plugins to investigate hidden processes, loaded DLLs, command lines, and network connections:
 
 **Hidden Processes & DLLs:**
+
 ```bash
 python3 vol.py -f /home/ubuntu/Desktop/Start\ here/Artifacts/Windows\ 7\ x64-Snapshot4.vmem windows.psscan | grep -i 2748
 python3 vol.py -f /home/ubuntu/Desktop/Start\ here/Artifacts/Windows\ 7\ x64-Snapshot4.vmem windows.dlllist | grep -i 2748
 python3 vol.py -f /home/ubuntu/Desktop/Start\ here/Artifacts/Windows\ 7\ x64-Snapshot4.vmem windows.dlllist | grep -i 3064
 ```
 
+<img width="975" height="57" alt="image" src="https://github.com/user-attachments/assets/ae926a84-39c3-4d19-b2cd-644b0189e57f" />
+
+
+<img width="975" height="88" alt="image" src="https://github.com/user-attachments/assets/c02d0942-3c13-4f43-80f1-21f9364aa5a1" />
+
+<img width="975" height="171" alt="image" src="https://github.com/user-attachments/assets/c4e53c19-7d82-4db5-b7e3-8c64ce0eb9da" />
+
+
+
+
 **Command Line Analysis:**
+
 ```bash
 python3 vol.py -f /home/ubuntu/Desktop/Start\ here/Artifacts/Windows\ 7\ x64-Snapshot4.vmem windows.cmdline | grep -i 2748
 python3 vol.py -f /home/ubuntu/Desktop/Start\ here/Artifacts/Windows\ 7\ x64-Snapshot4.vmem windows.cmdline | grep -i 3064
 ```
 
+<img width="975" height="47" alt="image" src="https://github.com/user-attachments/assets/6e951a53-5869-498c-856a-b6f170838bd6" />
+
+
+<img width="975" height="46" alt="image" src="https://github.com/user-attachments/assets/891b67d4-a05f-403e-b718-d11bdaba2bef" />
+
+
 **Network Connections:**  
+
 Analysis revealed outbound connections to **41.75.84.12** (Nigeria-based C2) on port 80.
 
+
+<img width="975" height="87" alt="image" src="https://github.com/user-attachments/assets/52400c1d-019f-4e0b-89b3-ce43292e92a3" />
+
+
+```bash
+python3 vol.py -f /home/ubuntu/Desktop/Start\ here/Artifacts/Windows\ 7\ x64-Snapshot4.vmem windows.netscan | grep -i 2748
+```
+
+
+
 **File System Artifacts:**  
+
 ```bash
 python3 vol.py -f /home/ubuntu/Desktop/Start\ here/Artifacts/Windows\ 7\ x64-Snapshot4.vmem windows.filescan | grep -i lssass
 ```
+
+<img width="975" height="72" alt="image" src="https://github.com/user-attachments/assets/44896c29-d8a1-4d44-bc74-5f63b2f0ccd3" />
+
 
 ---
 
