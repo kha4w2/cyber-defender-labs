@@ -1,5 +1,7 @@
 # 🛡️ WebStrike Lab – SOC Analyst Tier 1
 
+The Link To This Lab: https://cyberdefenders.org/blueteam-ctf-challenges/webstrike/
+
 ## 📌 Lab Overview
 
 **📝 Scenario:** Analyze network traffic using **Wireshark** to investigate a web server compromise, detect malicious web shell deployment, track reverse shell communication, and examine data exfiltration attempts.  
