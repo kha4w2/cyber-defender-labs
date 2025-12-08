@@ -1,5 +1,7 @@
 # 🔍 OSKI Malware Analysis – Threat Hunting Lab
 
+The Link To This Lab: https://cyberdefenders.org/blueteam-ctf-challenges/oski/
+
 ## 📌 Lab Overview
 
 <img width="1911" height="926" alt="image" src="https://github.com/user-attachments/assets/7ae3a848-40fa-4348-a65f-61c19584c206" />
