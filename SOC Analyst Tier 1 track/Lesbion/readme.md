@@ -1,10 +1,10 @@
-🔍 Lespion Lab – Write-Up
+### 🔍 Lespion Lab – Write-Up
 
 
 <img width="975" height="516" alt="image" src="https://github.com/user-attachments/assets/1c529d6e-d6bc-4efb-b719-27dc5e8dcf3a" />
 
 
-📌 Scenario
+### 📌 Scenario
 
 You have been tasked by a client whose network was compromised and brought offline to investigate the incident and determine the attacker's identity. Preliminary findings indicate the attack originated from a single user account, likely an insider.
 
