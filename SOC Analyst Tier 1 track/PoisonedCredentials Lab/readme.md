@@ -11,6 +11,7 @@
 **🎯 Attack Techniques:** LLMNR/NBT-NS Poisoning, SMB Relay, Credential Theft  
 **🛠️ Tools:** Wireshark  
 **⚡ Difficulty:** Easy | ⏱ ~30 mins  
+Link : https://cyberdefenders.org/blueteam-ctf-challenges/poisonedcredentials/
 
 ---
 
