@@ -3,6 +3,8 @@
 
 ### *Threat Intelligence – Malware Investigation*
 
+Link To This Lab: https://cyberdefenders.org/blueteam-ctf-challenges/yellow-rat/
+
 ---
 
 ## 📌 Scenario
