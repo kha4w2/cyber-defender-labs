@@ -3,7 +3,6 @@
 # **Overview**
 
 
-<img width="1917" height="955" alt="image" src="https://github.com/user-attachments/assets/58e60c31-4a6a-4975-9e95-ef7169adb2d6" />
 
 
 ## **Lab Information**
@@ -15,6 +14,9 @@
 * **Tools Used:** VirusTotal, MalwareBazaar, ThreatFox
 * **Difficulty:** Easy
 * **Time:** 30 minutes
+
+  <img width="1917" height="955" alt="image" src="https://github.com/user-attachments/assets/58e60c31-4a6a-4975-9e95-ef7169adb2d6" />
+
 
 ---
 
@@ -313,7 +315,7 @@ Using platforms like VirusTotal, MalwareBazaar, and ThreatFox enhances SOC capab
 
 **Result:** ✅ Full and comprehensive threat intelligence report successfully completed.
 
-![Uploading image.png…]()
+<img width="1917" height="955" alt="image" src="https://github.com/user-attachments/assets/2b3a327a-7389-4f11-bc98-2e8b85c32af8" />
 
 
 ---
