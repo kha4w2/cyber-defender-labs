@@ -3,7 +3,8 @@
 Link to this lab: https://cyberdefenders.org/blueteam-ctf-challenges/lespion/
 
 
-<img width="975" height="516" alt="image" src="https://github.com/user-attachments/assets/1c529d6e-d6bc-4efb-b719-27dc5e8dcf3a" /> 
+<img width="1888" height="917" alt="image" src="https://github.com/user-attachments/assets/2f3b5cc1-5e24-49ce-867f-2e03596e5516" />
+
 
 
 ## 📌 Scenario
