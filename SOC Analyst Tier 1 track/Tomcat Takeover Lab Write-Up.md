@@ -83,7 +83,7 @@
 **Answer:** `8080`
 
 
-<img width="975" height="461" alt="image" src="https://github.com/user-attachments/assets/0ed17acb-fd02-4038-bb6c-8e2b4e64ea1d" />
+<img width="975" height="523" alt="image" src="https://github.com/user-attachments/assets/7512047f-4e3b-4eba-a799-2e4ad6575e66" />
 
 
 > *Figure 4: Filter showing SYN-ACK packets for port 8080.*
