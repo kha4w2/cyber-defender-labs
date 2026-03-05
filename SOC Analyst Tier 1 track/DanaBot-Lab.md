@@ -1,4 +1,4 @@
-# DanaBot Lab Write-Up: Network Traffic Analysis & Malware Investigation
+<img width="975" height="409" alt="image" src="https://github.com/user-attachments/assets/72d55551-6e39-448d-8dcd-ebdd7fb5bf1a" /># DanaBot Lab Write-Up: Network Traffic Analysis & Malware Investigation
 
 ## **Lab Overview**
 - **Platform**: CyberDefenders
@@ -7,7 +7,7 @@
 - **Tools Used**: Wireshark, VirusTotal, Kali Linux
 - **Difficulty**: Easy
 - **Scenario**: SOC team detected suspicious network activity indicating a compromised machine and stolen sensitive data. Tasked to investigate the breach using PCAP analysis and threat intelligence.
-
+- **Lab Link**: https://cyberdefenders.org/blueteam-ctf-challenges/danabot/
 ---
 
 ## **Methodology & Investigation Steps**
@@ -24,6 +24,8 @@
 **Finding**:
 - The IP address `10.2.14.101` showed the highest traffic volume
 - **Conclusion**: This is the victim machine IP
+
+<img width="975" height="508" alt="image" src="https://github.com/user-attachments/assets/f8bdf816-1d3d-4eee-a982-9fdf91d0dc4d" />
 
 > *Figure 1: Wireshark conversations sorted by bytes showing victim IP 10.2.14.101*
 
@@ -42,6 +44,9 @@
 - Source IP `62.173.142.148` initiated HTTP connections to victim
 - **Initial Access IP**: 62.173.142.148 (attacker infrastructure)
 
+<img width="975" height="204" alt="image" src="https://github.com/user-attachments/assets/1934fcd7-595c-48e1-bbd8-98bd4898e1b7" />
+
+
 > *Figure 2: HTTP traffic filtered for victim IP showing attacker connections*
 
 ---
@@ -58,6 +63,9 @@
 **Finding**:
 - Malicious file name: **`allegato_708.js`** (JavaScript attachment)
 - This file was delivered via HTTP response and represents the initial infection vector
+
+<img width="975" height="342" alt="image" src="https://github.com/user-attachments/assets/fd752bea-781c-4acb-bfd1-acc17c8936e6" />
+
 
 > *Figure 3: HTTP stream showing JavaScript attachment delivery*
 
@@ -76,9 +84,16 @@
 ```
 SHA-256: 847b4ad90b1daba2d9117a8e05776f3f902dda593fb1252289538acf476c4268
 ```
+<img width="975" height="409" alt="image" src="https://github.com/user-attachments/assets/857289de-6ca6-4362-8b22-0bdab2bc1c44" />
 
 > *Figure 4: Exporting HTTP objects from Wireshark*
+
+<img width="975" height="682" alt="image" src="https://github.com/user-attachments/assets/f8757742-a761-4498-b45e-fd661a76b9e8" />
+
 > *Figure 5: Transferring file to Kali Linux*
+
+<img width="975" height="469" alt="image" src="https://github.com/user-attachments/assets/03154d0a-1731-49e0-b542-70de4bf894d1" />
+
 > *Figure 6: Calculating file hash in Kali*
 
 ---
@@ -94,6 +109,8 @@ SHA-256: 847b4ad90b1daba2d9117a8e05776f3f902dda593fb1252289538acf476c4268
 **Finding**:
 - The JavaScript is designed to execute via **`wscript.exe`**
 - This is a common technique for executing malicious scripts on Windows systems
+
+<img width="975" height="448" alt="image" src="https://github.com/user-attachments/assets/3fdc7c24-da2c-4ccd-aaab-94d17132830d" />
 
 > *Figure 7: JavaScript code revealing wscript execution*
 
@@ -112,7 +129,12 @@ SHA-256: 847b4ad90b1daba2d9117a8e05776f3f902dda593fb1252289538acf476c4268
 - Confirmed execution process: **`wscript.exe`**
 - Additional threat intelligence gathered about DanaBot malware family
 
+<img width="975" height="407" alt="image" src="https://github.com/user-attachments/assets/3719a424-4181-46c6-9926-1f483de88962" />
+
 > *Figure 8: VirusTotal scan results*
+
+<img width="975" height="431" alt="image" src="https://github.com/user-attachments/assets/ab79b018-df0d-41a5-bedf-fe31f515303c" />
+
 > *Figure 9: VirusTotal behavior details confirming wscript.exe*
 
 ---
@@ -130,6 +152,8 @@ SHA-256: 847b4ad90b1daba2d9117a8e05776f3f902dda593fb1252289538acf476c4268
 - Secondary file: **`resources.dll`** (DLL file)
 - This represents additional malware component or payload
 
+<img width="975" height="150" alt="image" src="https://github.com/user-attachments/assets/3452f0a5-e23b-464e-bb06-5210dafa4bf8" />
+
 > *Figure 10: HTTP traffic showing second file download*
 
 ---
@@ -146,8 +170,12 @@ SHA-256: 847b4ad90b1daba2d9117a8e05776f3f902dda593fb1252289538acf476c4268
 ```
 SHA-256: 2597322a49a6252445ca4c8d713320b238113b3b8fd8a2d6fc1088a5934cee0e
 ```
+<img width="975" height="482" alt="image" src="https://github.com/user-attachments/assets/9f385801-28b2-4562-bb5e-c7cccafd92a6" />
 
 > *Figure 11: Exporting resources.dll from Wireshark*
+
+<img width="975" height="427" alt="image" src="https://github.com/user-attachments/assets/45b6a319-4d83-417c-a51b-4bb9abbb5080" />
+
 > *Figure 12: Calculating DLL file hash*
 
 ---
