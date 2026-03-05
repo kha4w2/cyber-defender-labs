@@ -1,4 +1,6 @@
-<img width="975" height="409" alt="image" src="https://github.com/user-attachments/assets/72d55551-6e39-448d-8dcd-ebdd7fb5bf1a" /># DanaBot Lab Write-Up: Network Traffic Analysis & Malware Investigation
+# DanaBot Lab Write-Up: Network Traffic Analysis & Malware Investigation
+
+<img width="1918" height="820" alt="image" src="https://github.com/user-attachments/assets/4461e368-7698-4589-aead-f15500b7b8c9" />
 
 ## **Lab Overview**
 - **Platform**: CyberDefenders
