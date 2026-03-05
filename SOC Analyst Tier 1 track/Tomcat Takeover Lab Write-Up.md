@@ -8,6 +8,7 @@
 - **Tools Used**: Wireshark
 - **Difficulty**: Easy
 - **Scenario**: The SOC team identified suspicious activity on an internal Apache Tomcat web server. Network traffic was captured for analysis. Your task is to analyze the PCAP file to understand the scope of the attack, including scanning, enumeration, credential brute‑forcing, file upload, and persistence mechanisms.
+- **Lab Link**: https://cyberdefenders.org/blueteam-ctf-challenges/tomcat-takeover/
 
 ---
 
