@@ -8,7 +8,7 @@
 - **Tools Used**: Wireshark
 - **Difficulty**: Easy
 - **Scenario**: Examine network traffic with Wireshark to investigate a web server compromise, identify SQL injection, extract attacker credentials, and detect uploaded malware.
-
+- **Lab Link**: https://cyberdefenders.org/blueteam-ctf-challenges/web-investigation/
 ---
 
 ## **Investigation Steps & Answers**
